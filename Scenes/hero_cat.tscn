@@ -1,0 +1,218 @@
+[gd_scene format=3 uid="uid://oemcsil2yl8k"]
+
+[ext_resource type="Script" uid="uid://cnolchttmg0s8" path="res://Scripts/hero_cat.gd" id="1_o4hi2"]
+[ext_resource type="PackedScene" uid="uid://dr4op4ajgcd3a" path="res://Scenes/hud.tscn" id="1_sny67"]
+[ext_resource type="AudioStream" uid="uid://e2dhjwr7sdha" path="res://Assets/Audio/Click.ogg" id="2_cmer4"]
+[ext_resource type="Texture2D" uid="uid://bp5qdw3hydm3o" path="res://Assets/Graphics/Characters/hero-cat-big-animated-Sheet.png" id="2_spbyv"]
+[ext_resource type="Texture2D" uid="uid://b5ocm5teocgjo" path="res://Assets/Graphics/Dialog-box.png" id="3_dv8xf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv8xf"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir814"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(0, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tb65"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(0, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8lb0"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(0, 192, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdocj"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q72jh"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(64, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuy4s"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(64, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sle2q"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(64, 192, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7qxg"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_invme"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(96, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwx3p"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(96, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04216"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(96, 192, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40vw5"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3oxe"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(32, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7o8s"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(32, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_723uk"]
+atlas = ExtResource("2_spbyv")
+region = Rect2(32, 192, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o4hi2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dv8xf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir814")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tb65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8lb0")
+}],
+"loop": 1,
+"name": &"Facing-Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdocj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q72jh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuy4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sle2q")
+}],
+"loop": 1,
+"name": &"Facing-Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7qxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_invme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwx3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04216")
+}],
+"loop": 1,
+"name": &"Facing-Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40vw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3oxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7o8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_723uk")
+}],
+"loop": 1,
+"name": &"Facing-Up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ga5kc"]
+radius = 20.09975
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ga5kc"]
+size = Vector2(20, 52)
+
+[node name="HeroCat" type="CharacterBody2D" unique_id=1904249872]
+script = ExtResource("1_o4hi2")
+
+[node name="HeroCatBig" type="AnimatedSprite2D" parent="." unique_id=1100850307]
+sprite_frames = SubResource("SpriteFrames_o4hi2")
+animation = &"Facing-Down"
+
+[node name="HeroCollision" type="CollisionShape2D" parent="." unique_id=1949560702]
+shape = SubResource("CircleShape2D_ga5kc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=879497629]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1757335582]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_ga5kc")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1717632603]
+
+[node name="DialogRect" type="TextureRect" parent="Camera2D" unique_id=700531780]
+offset_left = -372.0
+offset_top = -266.0
+offset_right = 371.0
+offset_bottom = -90.0
+texture = ExtResource("3_dv8xf")
+
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D/DialogRect" unique_id=221587985]
+custom_maximum_size = Vector2(-1, 140)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 734.0
+offset_bottom = 160.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/DialogRect/MarginContainer" unique_id=1948298255]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/DialogRect/MarginContainer/VBoxContainer" unique_id=932457765]
+layout_mode = 2
+text = "This is my demo text filler
+more filler
+yet more filer
+more filller 
+more filler
+more filler
+
+more "
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/DialogRect/MarginContainer/VBoxContainer" unique_id=439041843]
+layout_mode = 2
+alignment = 1
+
+[node name="Button1" type="Button" parent="Camera2D/DialogRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=436067382]
+layout_mode = 2
+text = "button 1"
+flat = true
+
+[node name="Button2" type="Button" parent="Camera2D/DialogRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1487986638]
+layout_mode = 2
+text = "button 2
+"
+flat = true
+
+[node name="HUD" parent="Camera2D" unique_id=454443769 instance=ExtResource("1_sny67")]
+
+[node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=2044583738]
+unique_name_in_owner = true
+stream = ExtResource("2_cmer4")
