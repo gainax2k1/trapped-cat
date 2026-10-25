@@ -150,6 +150,63 @@ size = Vector2(20, 52)
 [node name="HeroCat" type="CharacterBody2D" unique_id=1904249872]
 script = ExtResource("1_o4hi2")
 
+[node name="DialogRect" type="TextureRect" parent="." unique_id=700531780]
+custom_minimum_size = Vector2(300, 100)
+custom_maximum_size = Vector2(300, 100)
+offset_left = -150.0
+offset_top = -151.0
+offset_right = 150.0
+offset_bottom = -51.0
+texture = ExtResource("3_dv8xf")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogRect" unique_id=221587985]
+custom_minimum_size = Vector2(290, 90)
+custom_maximum_size = Vector2(290, 90)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.024100494
+anchor_top = 0.05000002
+anchor_right = 0.9910002
+anchor_bottom = 0.89318186
+offset_right = -0.069885254
+offset_bottom = 5.681816
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogRect/MarginContainer" unique_id=932457765]
+layout_mode = 2
+text = "This is my demo text filler
+more filler
+yet more filer
+more filller 
+more filler
+more filler
+
+more "
+fit_content = true
+
+[node name="DialogButtons" type="HBoxContainer" parent="DialogRect" unique_id=439041843]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 98.0
+offset_right = -3.0
+offset_bottom = 29.0
+alignment = 1
+
+[node name="Button1" type="Button" parent="DialogRect/DialogButtons" unique_id=436067382]
+layout_mode = 2
+text = "button 1"
+flat = true
+
+[node name="Button2" type="Button" parent="DialogRect/DialogButtons" unique_id=1487986638]
+layout_mode = 2
+text = "button 2
+"
+flat = true
+
 [node name="HeroCatBig" type="AnimatedSprite2D" parent="." unique_id=1100850307]
 sprite_frames = SubResource("SpriteFrames_o4hi2")
 animation = &"Facing-Down"
@@ -164,52 +221,7 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_ga5kc")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1717632603]
-
-[node name="DialogRect" type="TextureRect" parent="Camera2D" unique_id=700531780]
-offset_left = -372.0
-offset_top = -266.0
-offset_right = 371.0
-offset_bottom = -90.0
-texture = ExtResource("3_dv8xf")
-
-[node name="MarginContainer" type="MarginContainer" parent="Camera2D/DialogRect" unique_id=221587985]
-custom_maximum_size = Vector2(-1, 140)
-layout_mode = 1
-anchors_preset = -1
-offset_left = 8.0
-offset_top = 10.0
-offset_right = 734.0
-offset_bottom = 160.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/DialogRect/MarginContainer" unique_id=1948298255]
-layout_mode = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/DialogRect/MarginContainer/VBoxContainer" unique_id=932457765]
-layout_mode = 2
-text = "This is my demo text filler
-more filler
-yet more filer
-more filller 
-more filler
-more filler
-
-more "
-fit_content = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/DialogRect/MarginContainer/VBoxContainer" unique_id=439041843]
-layout_mode = 2
-alignment = 1
-
-[node name="Button1" type="Button" parent="Camera2D/DialogRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=436067382]
-layout_mode = 2
-text = "button 1"
-flat = true
-
-[node name="Button2" type="Button" parent="Camera2D/DialogRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1487986638]
-layout_mode = 2
-text = "button 2
-"
-flat = true
+zoom = Vector2(2, 2)
 
 [node name="HUD" parent="Camera2D" unique_id=454443769 instance=ExtResource("1_sny67")]
 
