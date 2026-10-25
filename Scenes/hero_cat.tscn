@@ -141,16 +141,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ga5kc"]
-radius = 20.09975
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dv8xf"]
+radius = 14.0
+height = 36.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ga5kc"]
-size = Vector2(20, 52)
+size = Vector2(42, 60)
 
 [node name="HeroCat" type="CharacterBody2D" unique_id=1904249872]
 script = ExtResource("1_o4hi2")
 
 [node name="DialogRect" type="TextureRect" parent="." unique_id=700531780]
+visible = false
 custom_minimum_size = Vector2(300, 100)
 custom_maximum_size = Vector2(300, 100)
 offset_left = -150.0
@@ -212,12 +214,13 @@ sprite_frames = SubResource("SpriteFrames_o4hi2")
 animation = &"Facing-Down"
 
 [node name="HeroCollision" type="CollisionShape2D" parent="." unique_id=1949560702]
-shape = SubResource("CircleShape2D_ga5kc")
+position = Vector2(0, 13)
+shape = SubResource("CapsuleShape2D_dv8xf")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=879497629]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1757335582]
-position = Vector2(0, 4)
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_ga5kc")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1717632603]

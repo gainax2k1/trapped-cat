@@ -1,0 +1,64 @@
+[gd_resource type="TileSet" format=3 uid="uid://bpqfrd8irvf21"]
+
+[ext_resource type="Texture2D" uid="uid://c341tbmu4e4nj" path="res://Assets/Graphics/Ship/ship-inside-Sheet.png" id="1_bhh0b"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
+texture = ExtResource("1_bhh0b")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/size_in_atlas = Vector2i(1, 4)
+7:0/0 = 0
+8:0/size_in_atlas = Vector2i(1, 4)
+8:0/0 = 0
+9:0/size_in_atlas = Vector2i(1, 4)
+9:0/0 = 0
+10:0/size_in_atlas = Vector2i(1, 4)
+10:0/0 = 0
+0:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:0/0 = 0
+1:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+2:4/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+1:7/0 = 0
+0:7/0 = 0
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+0:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+6:2/0 = 0
+6:3/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+4:0/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+3:3/0 = 0
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_wrm1d")
