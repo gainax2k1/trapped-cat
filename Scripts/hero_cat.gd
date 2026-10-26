@@ -34,7 +34,38 @@ func move_hero(): ## recieves inputs and moves hero-cat
 	
 	move_and_slide()
 	
-
 func play_click() -> void:
 	%Click.play()
 	
+
+	
+func put_text(txt: String) -> void:
+	%RTLabel.text = txt
+	%TxtRect.visible = true
+
+
+func put_button_1(txt: String) -> void:
+	%Button1.text = txt
+	%Button1.visible = true
+
+func put_button_2(txt: String) -> void:
+	%Button2.text = txt
+	%Button2.visible = true
+
+func _on_interact_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	if area.name:
+		var txt = "body entered: " + area.name
+		print(txt)
+		var thing = TextManager.get_thing(area.name)
+		if thing != null:
+			txt = thing.TXT
+			put_text(txt)
+			if thing.Button1 != "NA":
+				put_button_1(thing.Button1)
+			if thing.Button2 != "NA":
+				put_button_2(thing.Button2)
+
+func _on_interact_area_2d_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	%TxtRect.visible = false
+	%Button1.visible = false
+	%Button2.visible = false

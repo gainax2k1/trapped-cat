@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://e2dhjwr7sdha" path="res://Assets/Audio/Click.ogg" id="2_cmer4"]
 [ext_resource type="Texture2D" uid="uid://bp5qdw3hydm3o" path="res://Assets/Graphics/Characters/hero-cat-big-animated-Sheet.png" id="2_spbyv"]
 [ext_resource type="Texture2D" uid="uid://b5ocm5teocgjo" path="res://Assets/Graphics/Dialog-box.png" id="3_dv8xf"]
+[ext_resource type="Script" uid="uid://o081v7os5amj" path="res://Scenes/rt_label.gd" id="3_ir814"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dv8xf"]
 atlas = ExtResource("2_spbyv")
@@ -148,11 +149,51 @@ height = 36.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ga5kc"]
 size = Vector2(42, 60)
 
+[sub_resource type="Animation" id="Animation_dv8xf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.26666668, 0.26666668, 0.26666668, 0.45490196)]
+}
+
+[sub_resource type="Animation" id="Animation_ir814"]
+resource_name = "shadow"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 2),
+"transitions": PackedFloat32Array(1, 2.1435473, 1),
+"update": 0,
+"values": [Color(0.26666668, 0.26666668, 0.26666668, 0.25882354), Color(0.36854523, 0.13269469, 0.11256524, 0.39607844), Color(0.26666668, 0.26666668, 0.26666668, 0.26666668)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8tb65"]
+_data = {
+&"RESET": SubResource("Animation_dv8xf"),
+&"shadow": SubResource("Animation_ir814")
+}
+
 [node name="HeroCat" type="CharacterBody2D" unique_id=1904249872]
 script = ExtResource("1_o4hi2")
 
-[node name="DialogRect" type="TextureRect" parent="." unique_id=700531780]
+[node name="TxtRect" type="TextureRect" parent="." unique_id=700531780]
+unique_name_in_owner = true
 visible = false
+z_index = 10
 custom_minimum_size = Vector2(300, 100)
 custom_maximum_size = Vector2(300, 100)
 offset_left = -150.0
@@ -162,7 +203,7 @@ offset_bottom = -51.0
 texture = ExtResource("3_dv8xf")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="DialogRect" unique_id=221587985]
+[node name="MarginContainer" type="MarginContainer" parent="TxtRect" unique_id=221587985]
 custom_minimum_size = Vector2(290, 90)
 custom_maximum_size = Vector2(290, 90)
 layout_mode = 1
@@ -175,19 +216,14 @@ offset_right = -0.069885254
 offset_bottom = 5.681816
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="DialogRect/MarginContainer" unique_id=932457765]
+[node name="RTLabel" type="RichTextLabel" parent="TxtRect/MarginContainer" unique_id=932457765]
+unique_name_in_owner = true
 layout_mode = 2
-text = "This is my demo text filler
-more filler
-yet more filer
-more filller 
-more filler
-more filler
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+script = ExtResource("3_ir814")
 
-more "
-fit_content = true
-
-[node name="DialogButtons" type="HBoxContainer" parent="DialogRect" unique_id=439041843]
+[node name="DialogButtons" type="HBoxContainer" parent="TxtRect" unique_id=439041843]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -198,16 +234,18 @@ offset_right = -3.0
 offset_bottom = 29.0
 alignment = 1
 
-[node name="Button1" type="Button" parent="DialogRect/DialogButtons" unique_id=436067382]
+[node name="Button1" type="Button" parent="TxtRect/DialogButtons" unique_id=436067382]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "button 1"
-flat = true
 
-[node name="Button2" type="Button" parent="DialogRect/DialogButtons" unique_id=1487986638]
+[node name="Button2" type="Button" parent="TxtRect/DialogButtons" unique_id=1487986638]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "button 2
 "
-flat = true
 
 [node name="HeroCatBig" type="AnimatedSprite2D" parent="." unique_id=1100850307]
 sprite_frames = SubResource("SpriteFrames_o4hi2")
@@ -217,9 +255,9 @@ animation = &"Facing-Down"
 position = Vector2(0, 13)
 shape = SubResource("CapsuleShape2D_dv8xf")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=879497629]
+[node name="InteractArea2D" type="Area2D" parent="." unique_id=879497629]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1757335582]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea2D" unique_id=1757335582]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_ga5kc")
 
@@ -231,3 +269,17 @@ zoom = Vector2(2, 2)
 [node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=2044583738]
 unique_name_in_owner = true
 stream = ExtResource("2_cmer4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1437680614]
+offset_left = -478.0
+offset_top = -352.0
+offset_right = 478.0
+offset_bottom = 335.0
+color = Color(0.26666668, 0.26666668, 0.26666668, 0.45490196)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=2100462264]
+libraries/ = SubResource("AnimationLibrary_8tb65")
+autoplay = &"shadow"
+
+[connection signal="area_shape_entered" from="InteractArea2D" to="." method="_on_interact_area_2d_area_shape_entered"]
+[connection signal="area_shape_exited" from="InteractArea2D" to="." method="_on_interact_area_2d_area_shape_exited"]

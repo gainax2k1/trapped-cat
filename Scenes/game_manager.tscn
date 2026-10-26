@@ -20,6 +20,7 @@ script = ExtResource("1_e5fcp")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=392040954]
 stream = SubResource("AudioStreamOggVorbis_oj352")
+autoplay = true
 parameters/looping = true
 
 [node name="SceneTransitionRect" parent="." unique_id=215802461 instance=ExtResource("2_e5fcp")]
