@@ -9,7 +9,7 @@ var scene_current: String = "res://Scenes/game.tscn" ## string "res://Scenes/...
 var scene_previous : String = "res://Scenes/game.tscn" ## string "res://Scenes/...tcsn"
 
 #player info
-@export var player_spawn_position : Vector2 = Vector2(218,31)## vector2 of players last coordinates in overworld
+@export var player_spawn_position : Vector2 = Vector2(50,31)## vector2 of players last coordinates in overworld
 @export var done_shopping : bool = false ## flags for whether you can enter store/friends house
 @export var have_empanadas : bool = false  ## flags for done cooking
 @export var art_done : bool = false

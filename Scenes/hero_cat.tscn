@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bp5qdw3hydm3o" path="res://Assets/Graphics/Characters/hero-cat-big-animated-Sheet.png" id="2_spbyv"]
 [ext_resource type="Texture2D" uid="uid://b5ocm5teocgjo" path="res://Assets/Graphics/Dialog-box.png" id="3_dv8xf"]
 [ext_resource type="Script" uid="uid://o081v7os5amj" path="res://Scenes/rt_label.gd" id="3_ir814"]
+[ext_resource type="Texture2D" uid="uid://d3mhg74sthtlg" path="res://Assets/Graphics/Props/smoke.png" id="7_8tb65"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dv8xf"]
 atlas = ExtResource("2_spbyv")
@@ -190,10 +191,27 @@ _data = {
 [node name="HeroCat" type="CharacterBody2D" unique_id=1904249872]
 script = ExtResource("1_o4hi2")
 
+[node name="ParallaxBackground" type="Parallax2D" parent="." unique_id=786237917]
+z_index = 10
+scroll_scale = Vector2(4, 4)
+scroll_offset = Vector2(200, -140)
+repeat_size = Vector2(200, 200)
+autoscroll = Vector2(10, 10)
+repeat_times = 17
+
+[node name="Smoke" type="Sprite2D" parent="ParallaxBackground" unique_id=1044592492]
+position = Vector2(-224, -4)
+texture = ExtResource("7_8tb65")
+
+[node name="Smoke2" type="Sprite2D" parent="ParallaxBackground" unique_id=1631729462]
+z_index = 20
+position = Vector2(-124, 350)
+texture = ExtResource("7_8tb65")
+
 [node name="TxtRect" type="TextureRect" parent="." unique_id=700531780]
 unique_name_in_owner = true
 visible = false
-z_index = 10
+z_index = 100
 custom_minimum_size = Vector2(300, 100)
 custom_maximum_size = Vector2(300, 100)
 offset_left = -150.0
@@ -262,7 +280,7 @@ position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_ga5kc")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1717632603]
-zoom = Vector2(2, 2)
+zoom = Vector2(1.75, 1.75)
 
 [node name="HUD" parent="Camera2D" unique_id=454443769 instance=ExtResource("1_sny67")]
 
@@ -271,6 +289,7 @@ unique_name_in_owner = true
 stream = ExtResource("2_cmer4")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1437680614]
+z_index = 20
 offset_left = -478.0
 offset_top = -352.0
 offset_right = 478.0

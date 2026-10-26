@@ -13,10 +13,16 @@ script = ExtResource("1_s72sx")
 TXT = "Maintenance Report: [br] Guys, I know we're not exactly a \"legitimate\" prisoner transport, but we can't use the default seurity passcode for everything!  \"1234\" is NOT a good password! [br] I'll keep it simple for you idiots: use the last 4 digits of one of the prisoners in the cell. The computer will automatically updated it when we drop off our \"cargo\". [br] Got it? - Boss"
 metadata/_custom_type_script = "uid://11r1ksyqtduy"
 
+[sub_resource type="Resource" id="Resource_s72sx"]
+script = ExtResource("1_s72sx")
+TXT = "I woke in a daze, smoke in my eyes and lungs. Where was I? [br] WHO was I? [br] ... [br] The sound of alarms surrounded me. [br] The only thing I was sure of: I had to escape."
+metadata/_custom_type_script = "uid://11r1ksyqtduy"
+
 [resource]
 script = ExtResource("2_ttpob")
 TScript = Dictionary[String, ExtResource("1_s72sx")]({
 "Pad1": SubResource("Resource_dv8xf"),
-"Pad2": SubResource("Resource_rfjv2")
+"Pad2": SubResource("Resource_rfjv2"),
+"StartText": SubResource("Resource_s72sx")
 })
 metadata/_custom_type_script = "uid://diqhx5vdcd4cl"
