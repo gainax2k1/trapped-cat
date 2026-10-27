@@ -45,12 +45,17 @@ func put_text(txt: String) -> void:
 
 
 func put_button_1(txt: String) -> void:
-	%Button1.text = txt
-	%Button1.visible = true
+	print("putbutton1:")
+	print("GM pad 1: ", GameManager.pad1read)
+	print("GM pad 2: ", GameManager.pad2read)
+	
+	if GameManager.pad1read and GameManager.pad2read:
+		%Button1.text = txt
+		%Button1.visible = true
 
 func put_button_2(txt: String) -> void:
-	%Button2.text = txt
-	%Button2.visible = true
+		%Button2.text = txt
+		%Button2.visible = true
 
 func _on_interact_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	if area.name:
@@ -69,3 +74,21 @@ func _on_interact_area_2d_area_shape_exited(area_rid: RID, area: Area2D, area_sh
 	%TxtRect.visible = false
 	%Button1.visible = false
 	%Button2.visible = false
+
+
+
+
+func _on_button_1_pressed() -> void:
+	GameManager.button1 = true
+	put_text("The force field is disable now.")
+
+
+func _on_button_2_pressed() -> void:
+	if GameManager.ending:
+		print("ENDING")
+		## switch to ending scene
+		pass
+	else:
+		GameManager.button2 = true
+	
+		put_text("Nothing happened.")

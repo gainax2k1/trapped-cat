@@ -15,6 +15,13 @@ var scene_previous : String = "res://Scenes/game.tscn" ## string "res://Scenes/.
 @export var art_done : bool = false
 @export var neener_done : bool = false
 
+@export var button1 : bool = false
+@export var button2 : bool = false
+@export var pad1read : bool = false
+@export var pad2read : bool = false
+@export var ending : bool = false
+
+
 #might need reworking depending on how music get's set up...
 func bg_music_play(track_name : String) -> void: ## recieves "res://Audio/Music/...ogg"
 	if track_name != "":

@@ -18,11 +18,39 @@ script = ExtResource("1_s72sx")
 TXT = "I woke in a daze, smoke in my eyes and lungs. Where was I? [br] WHO was I? [br] ... [br] The sound of alarms surrounded me. [br] The only thing I was sure of: I had to escape."
 metadata/_custom_type_script = "uid://11r1ksyqtduy"
 
+[sub_resource type="Resource" id="Resource_iivbl"]
+script = ExtResource("1_s72sx")
+TXT = "(Force-field control 1)[br]***ERROR***"
+metadata/_custom_type_script = "uid://11r1ksyqtduy"
+
+[sub_resource type="Resource" id="Resource_ttpob"]
+script = ExtResource("1_s72sx")
+TXT = "(Force-field control 2)[br]Enter code-> ...."
+Button1 = "6585"
+Button2 = "...1234?"
+metadata/_custom_type_script = "uid://11r1ksyqtduy"
+
+[sub_resource type="Resource" id="Resource_7t8sx"]
+script = ExtResource("1_s72sx")
+TXT = "Debris is blocking the way, and it's too heavy for me to move on my own."
+metadata/_custom_type_script = "uid://11r1ksyqtduy"
+
+[sub_resource type="Resource" id="Resource_mg4q0"]
+script = ExtResource("1_s72sx")
+TXT = "It looks like an explosion oppened up a hole in the wall. [br] It looks like a tight squeeze, but I might just be able to squeeze through. [br] I can't see through to the other side..."
+Button1 = ""
+Button2 = "... I'll squeeze myself through"
+metadata/_custom_type_script = "uid://11r1ksyqtduy"
+
 [resource]
 script = ExtResource("2_ttpob")
 TScript = Dictionary[String, ExtResource("1_s72sx")]({
+"BlockedDoor": SubResource("Resource_7t8sx"),
+"Exit": SubResource("Resource_mg4q0"),
 "Pad1": SubResource("Resource_dv8xf"),
 "Pad2": SubResource("Resource_rfjv2"),
-"StartText": SubResource("Resource_s72sx")
+"StartText": SubResource("Resource_s72sx"),
+"keypad1": SubResource("Resource_iivbl"),
+"keypad2": SubResource("Resource_ttpob")
 })
 metadata/_custom_type_script = "uid://diqhx5vdcd4cl"
