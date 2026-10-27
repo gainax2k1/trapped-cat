@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bqhl3egnmqpac" path="res://Assets/Graphics/Props/keypad-anim.png" id="4_3dryh"]
 [ext_resource type="Texture2D" uid="uid://dn2ewqhup7j5q" path="res://Assets/Graphics/Ship/shield-anim-Sheet.png" id="5_wowpa"]
 [ext_resource type="Texture2D" uid="uid://ds154vsrwkr82" path="res://Assets/Graphics/Props/Debris-1.png" id="6_h4fw4"]
+[ext_resource type="Texture2D" uid="uid://dbu1w8hofcn08" path="res://Assets/Graphics/Props/damage-small-tear.png" id="6_vm72l"]
 [ext_resource type="Texture2D" uid="uid://cr4gfdvde8o75" path="res://Assets/Graphics/Props/Debris-2.png" id="7_ldgsr"]
 [ext_resource type="AudioStream" uid="uid://c0dtp7m528782" path="res://Assets/Audio/alarm.ogg" id="7_nb51f"]
 [ext_resource type="Texture2D" uid="uid://b68p7raiymre2" path="res://Assets/Graphics/Props/Debris-3.png" id="8_o5yvi"]
@@ -23,6 +24,7 @@
 [ext_resource type="Script" uid="uid://ch0lq23p7hebt" path="res://Scenes/pad_1.gd" id="18_mg4q0"]
 [ext_resource type="AudioStream" uid="uid://cd6ennnvsskdg" path="res://Assets/Audio/crash.ogg" id="19_iivbl"]
 [ext_resource type="Script" uid="uid://bgxcg0r8mal3g" path="res://Scenes/cell_2.gd" id="23_mg4q0"]
+[ext_resource type="Texture2D" uid="uid://drlkva8ixwq5h" path="res://Assets/Graphics/Props/electric-anim-Sheet.png" id="25_22asu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vkqu"]
 size = Vector2(887, 180)
@@ -41,6 +43,9 @@ size = Vector2(55, 28)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ga5kc"]
 radius = 26.172504
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0vkqu"]
+radius = 34.92849
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxrlw"]
 atlas = ExtResource("1_ebmjs")
@@ -478,6 +483,63 @@ size = Vector2(46, 26)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxe0o"]
 size = Vector2(48, 20)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwurv"]
+atlas = ExtResource("25_22asu")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mucmn"]
+atlas = ExtResource("25_22asu")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m3t6"]
+atlas = ExtResource("25_22asu")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ese38"]
+atlas = ExtResource("25_22asu")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeip8"]
+atlas = ExtResource("25_22asu")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe308"]
+atlas = ExtResource("25_22asu")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3cha"]
+atlas = ExtResource("25_22asu")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o05n3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwurv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mucmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m3t6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ese38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oeip8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe308")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3cha")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 20.0
+}]
+
 [node name="Ship1" type="Node2D" unique_id=685758834]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=15959401]
@@ -586,6 +648,40 @@ texture = ExtResource("8_o5yvi")
 position = Vector2(-288, -119)
 texture = ExtResource("8_o5yvi")
 
+[node name="DamageSmallTear" type="Sprite2D" parent="DebrisFloor" unique_id=185753676]
+position = Vector2(-389, -57)
+rotation = 2.8012533
+texture = ExtResource("6_vm72l")
+
+[node name="LaserShot" type="Area2D" parent="DebrisFloor/DamageSmallTear" unique_id=803851740]
+position = Vector2(30.300888, -13.669312)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DebrisFloor/DamageSmallTear/LaserShot" unique_id=1374028828]
+shape = SubResource("CircleShape2D_0vkqu")
+
+[node name="DamageSmallTear" type="Sprite2D" parent="DebrisFloor/DamageSmallTear" unique_id=496711276]
+position = Vector2(12.605652, -18.413834)
+rotation = -0.2932153
+skew = 0.2617994
+texture = ExtResource("6_vm72l")
+
+[node name="DamageSmallTear2" type="Sprite2D" parent="DebrisFloor/DamageSmallTear" unique_id=883244894]
+position = Vector2(36.939423, 3.5332336)
+rotation = 0.059341196
+texture = ExtResource("6_vm72l")
+
+[node name="Debris1" type="Sprite2D" parent="DebrisFloor/DamageSmallTear" unique_id=1209472686]
+position = Vector2(66.53279, -23.116852)
+texture = ExtResource("6_h4fw4")
+
+[node name="Debris4" type="Sprite2D" parent="DebrisFloor/DamageSmallTear" unique_id=558931819]
+position = Vector2(40.256363, -38.786896)
+texture = ExtResource("9_rku1e")
+
+[node name="Debris2" type="Sprite2D" parent="DebrisFloor/DamageSmallTear" unique_id=1268047977]
+position = Vector2(40.72879, -13.159241)
+texture = ExtResource("7_ldgsr")
+
 [node name="Alarm" type="AnimatedSprite2D" parent="." unique_id=778042021]
 position = Vector2(-183, -64)
 sprite_frames = SubResource("SpriteFrames_ga5kc")
@@ -594,7 +690,7 @@ frame_progress = 0.41608644
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Alarm" unique_id=518247605]
 stream = ExtResource("7_nb51f")
-volume_db = 4.76
+volume_db = 3.5
 autoplay = true
 max_distance = 301.0
 attenuation = 1.4640859
@@ -608,7 +704,7 @@ frame_progress = 0.41608644
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Alarm2" unique_id=2086427556]
 stream = ExtResource("7_nb51f")
-volume_db = 4.505
+volume_db = 3.5
 autoplay = true
 max_distance = 301.0
 attenuation = 1.4640859
@@ -620,10 +716,9 @@ sprite_frames = SubResource("SpriteFrames_e78ct")
 autoplay = "default"
 
 [node name="keypad1" type="Area2D" parent="BrokenPad" unique_id=1104885153]
-position = Vector2(-8, 5)
+position = Vector2(-24, 20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BrokenPad/keypad1" unique_id=1691387471]
-position = Vector2(-10.5, 9.5)
 shape = SubResource("RectangleShape2D_7t8sx")
 
 [node name="WorkingPad" type="AnimatedSprite2D" parent="." unique_id=273728123]
@@ -939,7 +1034,35 @@ texture = ExtResource("9_rku1e")
 stream = ExtResource("19_iivbl")
 volume_db = 13.664
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1482851068]
+position = Vector2(-148.00002, 275)
+rotation = 0.89011794
+scale = Vector2(0.275, 0.275)
+sprite_frames = SubResource("SpriteFrames_o05n3")
+autoplay = "default"
+frame_progress = 0.9144618
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=725198448]
+position = Vector2(-106.38815, 40.67505)
+rotation = 0.16580628
+scale = Vector2(0.711, 1.327)
+skew = 0.14835298
+sprite_frames = SubResource("SpriteFrames_o05n3")
+autoplay = "default"
+frame_progress = 0.82299936
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=554559260]
+position = Vector2(-51.218018, -82.53238)
+rotation = 0.16580628
+scale = Vector2(0.711, 1.327)
+skew = 0.14835298
+sprite_frames = SubResource("SpriteFrames_o05n3")
+autoplay = "default"
+frame_progress = 0.93662256
+
 [connection signal="body_entered" from="Pad2/Pad2" to="Pad2" method="_on_pad_2_body_entered"]
+[connection signal="body_shape_entered" from="Pad2/Pad2" to="Pad2" method="_on_pad_2_body_shape_entered"]
 [connection signal="body_entered" from="Pad1/Pad1" to="Pad1" method="_on_pad_1_body_entered"]
+[connection signal="body_shape_entered" from="Pad1/Pad1" to="Pad1" method="_on_pad_1_body_shape_entered"]
 [connection signal="body_entered" from="CellExit" to="CellExit" method="_on_body_entered"]
 [connection signal="body_entered" from="Cell2" to="Cell2" method="_on_body_entered"]

@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://h042bsgvymxt"]
+
+[ext_resource type="Script" uid="uid://b1csqfnoxg4by" path="res://title.gd" id="1_3xoar"]
+[ext_resource type="Texture2D" uid="uid://dn2ewqhup7j5q" path="res://Assets/Graphics/Ship/shield-anim-Sheet.png" id="1_kpexm"]
+[ext_resource type="Texture2D" uid="uid://duw0dh4jmifb3" path="res://Assets/Graphics/trapped-title.png" id="3_mom7w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb51f"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnt18"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewbju"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85qyi"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfjv2"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1phco"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iivbl"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nbq1"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exi56"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t8sx"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg4q0"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm72l"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22asu"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkdbe"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81klo"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgy6u"]
+atlas = ExtResource("1_kpexm")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7lgly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nb51f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnt18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewbju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85qyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfjv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1phco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iivbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nbq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exi56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t8sx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg4q0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm72l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22asu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkdbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81klo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgy6u")
+}],
+"loop": 1,
+"name": &"shield-on",
+"speed": 5.0
+}]
+
+[node name="title" type="Node2D" unique_id=1622459766]
+script = ExtResource("1_3xoar")
+
+[node name="Shield2" type="AnimatedSprite2D" parent="." unique_id=710544901]
+position = Vector2(580.99994, 309.74994)
+scale = Vector2(51.812496, 26.203123)
+sprite_frames = SubResource("SpriteFrames_7lgly")
+animation = &"shield-on"
+autoplay = "shield-on"
+frame_progress = 0.36936307
+
+[node name="TrappedTitle" type="Sprite2D" parent="." unique_id=1960627134]
+position = Vector2(569.94446, 246.5)
+scale = Vector2(2.9444444, 2.9444444)
+texture = ExtResource("3_mom7w")
+
+[node name="LinkButton" type="LinkButton" parent="." unique_id=1100795366]
+offset_left = 533.0
+offset_top = 584.0
+offset_right = 672.0
+offset_bottom = 624.0
+theme_override_colors/font_color = Color(0.3776743, 4.2547585e-05, 0.33722538, 1)
+theme_override_font_sizes/font_size = 24
+text = "@gainax2k1"
+uri = "https://gainax2k1.itch.io/"
+
+[node name="Button" type="Button" parent="." unique_id=1232958764]
+offset_left = 542.0
+offset_top = 432.0
+offset_right = 657.0
+offset_bottom = 490.0
+theme_override_font_sizes/font_size = 36
+text = "START"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

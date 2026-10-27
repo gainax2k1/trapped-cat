@@ -24,4 +24,3 @@ autoplay = true
 parameters/looping = true
 
 [node name="SceneTransitionRect" parent="." unique_id=215802461 instance=ExtResource("2_e5fcp")]
-script = null

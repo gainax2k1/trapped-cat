@@ -272,17 +272,20 @@ metadata/_edit_use_anchors_ = true
 [node name="RTLabel" type="RichTextLabel" parent="Control/TxtRect/MarginContainer" unique_id=932457765]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 12
+theme_override_colors/default_color = Color(0.1114484, 0.6010316, 0.07754878, 1)
+theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 script = ExtResource("3_ir814")
 
 [node name="ParallaxBackground" type="Parallax2D" parent="." unique_id=786237917]
 z_index = 10
+scale = Vector2(4, 4)
 scroll_scale = Vector2(4, 4)
 scroll_offset = Vector2(200, -140)
 repeat_size = Vector2(200, 200)
 autoscroll = Vector2(10, 10)
-repeat_times = 17
+repeat_times = 10
+follow_viewport = false
 
 [node name="Smoke" type="Sprite2D" parent="ParallaxBackground" unique_id=1044592492]
 position = Vector2(-224, -4)

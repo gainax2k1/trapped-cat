@@ -3,33 +3,6 @@
 [ext_resource type="Script" uid="uid://11r1ksyqtduy" path="res://Scripts/TxtLine.gd" id="1_s72sx"]
 [ext_resource type="Script" uid="uid://diqhx5vdcd4cl" path="res://Scripts/TxtDict.gd" id="2_ttpob"]
 
-[sub_resource type="Resource" id="Resource_dv8xf"]
-script = ExtResource("1_s72sx")
-TXT = "Prisoner list:[br]  - Cell 1: 'Baermar' #0036352 [br]  * Bio: (REDACTED) [br]    - Cell 2: 'Artemis' #0036585 [br]  * Bio: (REDACTED) [br]  - Cell 2: 'Neener' #0036788 [br]  * Bio: (REDACTED)   [br] Enroute to: (REDACTED)[br]"
-metadata/_custom_type_script = "uid://11r1ksyqtduy"
-
-[sub_resource type="Resource" id="Resource_rfjv2"]
-script = ExtResource("1_s72sx")
-TXT = "Maintenance Report: [br] Guys, I know we're not exactly a \"legitimate\" prisoner transport, but we can't use the default seurity passcode for everything!  \"1234\" is NOT a good password! [br] I'll keep it simple for you idiots: use the last 4 digits of one of the prisoners in the cell. The computer will automatically updated it when we drop off our \"cargo\". [br] Got it? - Boss"
-metadata/_custom_type_script = "uid://11r1ksyqtduy"
-
-[sub_resource type="Resource" id="Resource_s72sx"]
-script = ExtResource("1_s72sx")
-TXT = "I woke in a daze, smoke in my eyes and lungs. Where was I? [br] WHO was I? [br] ... [br] The sound of alarms surrounded me. [br] The only thing I was sure of: I had to escape."
-metadata/_custom_type_script = "uid://11r1ksyqtduy"
-
-[sub_resource type="Resource" id="Resource_iivbl"]
-script = ExtResource("1_s72sx")
-TXT = "(Force-field control 1)[br]***ERROR***"
-metadata/_custom_type_script = "uid://11r1ksyqtduy"
-
-[sub_resource type="Resource" id="Resource_ttpob"]
-script = ExtResource("1_s72sx")
-TXT = "(Force-field control 2)[br]Enter code-> ...."
-Button1 = "6585"
-Button2 = "...1234?"
-metadata/_custom_type_script = "uid://11r1ksyqtduy"
-
 [sub_resource type="Resource" id="Resource_7t8sx"]
 script = ExtResource("1_s72sx")
 TXT = "Debris is blocking the way, and it's too heavy for me to move on my own."
@@ -37,9 +10,41 @@ metadata/_custom_type_script = "uid://11r1ksyqtduy"
 
 [sub_resource type="Resource" id="Resource_mg4q0"]
 script = ExtResource("1_s72sx")
-TXT = "It looks like an explosion oppened up a hole in the wall. [br] It looks like a tight squeeze, but I might just be able to squeeze through. [br] I can't see through to the other side..."
+TXT = "It looks like an explosion oppened up a hole in the wall. [br] It looks like a tight squeeze, but I might just be able to squeeze through. [br] I can't see through to the other side...[br][br] ... but what choice do I have?[br]"
 Button1 = ""
-Button2 = "... I'll squeeze myself through"
+Button2 = "... I'll squeeze  through"
+metadata/_custom_type_script = "uid://11r1ksyqtduy"
+
+[sub_resource type="Resource" id="Resource_vm72l"]
+script = ExtResource("1_s72sx")
+TXT = "This damage... [br] Laser rifle maybe? [br][br] What happened here?[br]"
+metadata/_custom_type_script = "uid://11r1ksyqtduy"
+
+[sub_resource type="Resource" id="Resource_dv8xf"]
+script = ExtResource("1_s72sx")
+TXT = "Prisoner list:[br] [br] - Cell 1: 'Baermar' #0036352 [br]  * Bio: (REDACTED) [br] [br]  [br][br]  - Cell 1: 'Neener' #0036788 [br]  * Bio: (REDACTED)[br] *** REMOVED   [br] [br]  - Cell 2: 'Artemis' #0036585 [br]  * Bio: (REDACTED) Enroute to: [br] - Transfer station A103[br]"
+metadata/_custom_type_script = "uid://11r1ksyqtduy"
+
+[sub_resource type="Resource" id="Resource_rfjv2"]
+script = ExtResource("1_s72sx")
+TXT = "Maintenance Report: [br] Guys, [br]   I know we're not exactly legitimate transport, but we can't use the default seurity passcode for everything!  \"1234\" is NOT a good password! [br] I'll keep it simple for you idiots:[br] - use the last 4 digits of  the prisoner ID in the cell. I already  updated it for you clowns, just be sure to change it  when we drop off our \"cargo\". [br] Got it?[br] - Boss [br]"
+metadata/_custom_type_script = "uid://11r1ksyqtduy"
+
+[sub_resource type="Resource" id="Resource_s72sx"]
+script = ExtResource("1_s72sx")
+TXT = "I woke in a daze, smoke in my eyes and lungs.[br] Where was I? [br] WHO was I? [br] ... [br] The sound of alarms surrounded me. [br] The only thing I was sure of: [br]    I had to escape. [br]"
+metadata/_custom_type_script = "uid://11r1ksyqtduy"
+
+[sub_resource type="Resource" id="Resource_iivbl"]
+script = ExtResource("1_s72sx")
+TXT = "(Force-field control 1)[br][br]***ERROR***"
+metadata/_custom_type_script = "uid://11r1ksyqtduy"
+
+[sub_resource type="Resource" id="Resource_ttpob"]
+script = ExtResource("1_s72sx")
+TXT = "(Force-field control 2)[br][br]Enter code-> ...."
+Button1 = "6585"
+Button2 = "...1234?"
 metadata/_custom_type_script = "uid://11r1ksyqtduy"
 
 [resource]
@@ -47,6 +52,7 @@ script = ExtResource("2_ttpob")
 TScript = Dictionary[String, ExtResource("1_s72sx")]({
 "BlockedDoor": SubResource("Resource_7t8sx"),
 "Exit": SubResource("Resource_mg4q0"),
+"LaserShot": SubResource("Resource_vm72l"),
 "Pad1": SubResource("Resource_dv8xf"),
 "Pad2": SubResource("Resource_rfjv2"),
 "StartText": SubResource("Resource_s72sx"),

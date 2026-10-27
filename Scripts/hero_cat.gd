@@ -58,7 +58,7 @@ func put_button_2(txt: String) -> void:
 		%Button2.visible = true
 
 func _on_interact_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	if area.name:
+	#if area.name:
 		var txt = "body entered: " + area.name
 		print(txt)
 		var thing = TextManager.get_thing(area.name)
@@ -84,9 +84,10 @@ func _on_button_1_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
-	if GameManager.ending:
+	print("gm button 2 pressed ending?: ", GameManager.ending)
+	if GameManager.ending == true:
 		print("ENDING")
-		## switch to ending scene
+		GameManager.change_scene("res://Scenes/ending.tscn")
 		pass
 	else:
 		GameManager.button2 = true

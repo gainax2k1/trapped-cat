@@ -14,3 +14,8 @@ func _process(delta: float) -> void:
 func _on_pad_2_body_entered(body: Node2D) -> void:
 	if body.name == "HeroCat":
 		GameManager.pad2read = true
+
+
+func _on_pad_2_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	if body.name == "HeroCat":
+		GameManager.pad2read = true
